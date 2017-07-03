@@ -15,7 +15,7 @@
     "start": "nodemon -w src -x npm run start-electron",
     "test": "echo \"Error: no test specified\" && exit 1",
     "electron-builder": "build --publish never",
-    "electron-publish": "build -mw --publish always || bash -c 'name=$(date +%s).tar.gz tar -czvf $name * && brew install awscli && aws --region=us-west-2 s3 sync $name s3://crap.stream.place/builds/$name' "
+    "electron-publish": "build -mw --publish always || bash -c 'name=$(date +%s).tar.gz tar -czvf $name * && brew install awscli && aws --region us-west-2 s3 cp $name s3://crap.stream.place/builds/$name' "
   },
   "directories": null,
   "author": "Streamplace",
