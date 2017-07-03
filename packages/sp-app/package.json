@@ -2,7 +2,7 @@
   "name": "sp-app",
   "version": "0.0.16",
   "description": "Streamplace Desktop App",
-  "main": "dist/sp-app.js",
+  "main": "app-dist/sp-app.js",
   "build": {
     "appId": "stream.place",
     "mac": {
@@ -10,7 +10,7 @@
     }
   },
   "scripts": {
-    "prepublish": "babel --keep-lines --copy-files -d dist src",
+    "prepublish": "babel --keep-lines --copy-files -d app-dist src",
     "start-electron": "npm run prepublish && SP_URL=$(cat ../../values-dev.yaml  | grep domain | sed 's/^.*://' | sed 's/ //') electron .",
     "start": "nodemon -w src -x npm run start-electron",
     "test": "echo \"Error: no test specified\" && exit 1",
